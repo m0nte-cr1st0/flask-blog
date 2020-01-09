@@ -1,0 +1,126 @@
+2019-09-11 18:03:35,563 ERROR: Exception on /edit_profile [POST] [in /home/m0nte-cr1st0/.virtualenvs/grinberg_blog/lib/python3.6/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/home/m0nte-cr1st0/.virtualenvs/grinberg_blog/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1249, in _execute_context
+    cursor, statement, parameters, context
+  File "/home/m0nte-cr1st0/.virtualenvs/grinberg_blog/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 552, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.IntegrityError: UNIQUE constraint failed: user.username
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/m0nte-cr1st0/.virtualenvs/grinberg_blog/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/m0nte-cr1st0/.virtualenvs/grinberg_blog/lib/python3.6/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/m0nte-cr1st0/.virtualenvs/grinberg_blog/lib/python3.6/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/m0nte-cr1st0/.virtualenvs/grinberg_blog/lib/python3.6/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/m0nte-cr1st0/.virtualenvs/grinberg_blog/lib/python3.6/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/m0nte-cr1st0/.virtualenvs/grinberg_blog/lib/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/m0nte-cr1st0/.virtualenvs/grinberg_blog/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/m0nte-cr1st0/flask_projects/grinberg_blog/app/routes.py", line 99, in edit_profile
+    db.session.commit()
+  File "/home/m0nte-cr1st0/.virtualenvs/grinberg_blog/lib/python3.6/site-packages/sqlalchemy/orm/scoping.py", line 162, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "/home/m0nte-cr1st0/.virtualenvs/grinberg_blog/lib/python3.6/site-packages/sqlalchemy/orm/session.py", line 1027, in commit
+    self.transaction.commit()
+  File "/home/m0nte-cr1st0/.virtualenvs/grinberg_blog/lib/python3.6/site-packages/sqlalchemy/orm/session.py", line 494, in commit
+    self._prepare_impl()
+  File "/home/m0nte-cr1st0/.virtualenvs/grinberg_blog/lib/python3.6/site-packages/sqlalchemy/orm/session.py", line 473, in _prepare_impl
+    self.session.flush()
+  File "/home/m0nte-cr1st0/.virtualenvs/grinberg_blog/lib/python3.6/site-packages/sqlalchemy/orm/session.py", line 2459, in flush
+    self._flush(objects)
+  File "/home/m0nte-cr1st0/.virtualenvs/grinberg_blog/lib/python3.6/site-packages/sqlalchemy/orm/session.py", line 2597, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/home/m0nte-cr1st0/.virtualenvs/grinberg_blog/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/home/m0nte-cr1st0/.virtualenvs/grinberg_blog/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 153, in reraise
+    raise value
+  File "/home/m0nte-cr1st0/.virtualenvs/grinberg_blog/lib/python3.6/site-packages/sqlalchemy/orm/session.py", line 2557, in _flush
+    flush_context.execute()
+  File "/home/m0nte-cr1st0/.virtualenvs/grinberg_blog/lib/python3.6/site-packages/sqlalchemy/orm/unitofwork.py", line 422, in execute
+    rec.execute(self)
+  File "/home/m0nte-cr1st0/.virtualenvs/grinberg_blog/lib/python3.6/site-packages/sqlalchemy/orm/unitofwork.py", line 589, in execute
+    uow,
+  File "/home/m0nte-cr1st0/.virtualenvs/grinberg_blog/lib/python3.6/site-packages/sqlalchemy/orm/persistence.py", line 236, in save_obj
+    update,
+  File "/home/m0nte-cr1st0/.virtualenvs/grinberg_blog/lib/python3.6/site-packages/sqlalchemy/orm/persistence.py", line 996, in _emit_update_statements
+    statement, multiparams
+  File "/home/m0nte-cr1st0/.virtualenvs/grinberg_blog/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 988, in execute
+    return meth(self, multiparams, params)
+  File "/home/m0nte-cr1st0/.virtualenvs/grinberg_blog/lib/python3.6/site-packages/sqlalchemy/sql/elements.py", line 287, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/home/m0nte-cr1st0/.virtualenvs/grinberg_blog/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1107, in _execute_clauseelement
+    distilled_params,
+  File "/home/m0nte-cr1st0/.virtualenvs/grinberg_blog/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1253, in _execute_context
+    e, statement, parameters, cursor, context
+  File "/home/m0nte-cr1st0/.virtualenvs/grinberg_blog/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1473, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "/home/m0nte-cr1st0/.virtualenvs/grinberg_blog/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 398, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/home/m0nte-cr1st0/.virtualenvs/grinberg_blog/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 152, in reraise
+    raise value.with_traceback(tb)
+  File "/home/m0nte-cr1st0/.virtualenvs/grinberg_blog/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1249, in _execute_context
+    cursor, statement, parameters, context
+  File "/home/m0nte-cr1st0/.virtualenvs/grinberg_blog/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 552, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: user.username
+[SQL: UPDATE user SET username=?, about_me=? WHERE user.id = ?]
+[parameters: ('admin', '', 2)]
+(Background on this error at: http://sqlalche.me/e/gkpj)
+2019-09-12 10:28:45,893 INFO: Microblog startup [in /home/m0nte-cr1st0/flask_projects/grinberg_blog/app/__init__.py:44]
+2019-09-12 10:43:36,979 INFO: Microblog startup [in /home/m0nte-cr1st0/flask_projects/grinberg_blog/app/__init__.py:44]
+2019-09-12 10:50:06,652 INFO: Microblog startup [in /home/m0nte-cr1st0/flask_projects/grinberg_blog/app/__init__.py:44]
+2019-09-13 10:26:59,748 INFO: Microblog startup [in /home/m0nte-cr1st0/flask_projects/grinberg_blog/app/__init__.py:77]
+2019-09-13 10:43:23,731 INFO: Microblog startup [in /home/m0nte-cr1st0/flask_projects/grinberg_blog/app/__init__.py:77]
+2019-09-13 11:23:33,511 INFO: Microblog startup [in /home/m0nte-cr1st0/flask_projects/grinberg_blog/app/__init__.py:82]
+2019-09-13 12:07:10,397 INFO: Microblog startup [in /home/m0nte-cr1st0/flask_projects/grinberg_blog/app/__init__.py:87]
+2019-09-13 12:07:18,890 ERROR: Exception on /export_posts [GET] [in /home/m0nte-cr1st0/.virtualenvs/grinberg_blog/lib/python3.6/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/home/m0nte-cr1st0/.virtualenvs/grinberg_blog/lib/python3.6/site-packages/redis/connection.py", line 538, in connect
+    sock = self._connect()
+  File "/home/m0nte-cr1st0/.virtualenvs/grinberg_blog/lib/python3.6/site-packages/redis/connection.py", line 595, in _connect
+    raise err
+  File "/home/m0nte-cr1st0/.virtualenvs/grinberg_blog/lib/python3.6/site-packages/redis/connection.py", line 583, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/m0nte-cr1st0/.virtualenvs/grinberg_blog/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/m0nte-cr1st0/.virtualenvs/grinberg_blog/lib/python3.6/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/m0nte-cr1st0/.virtualenvs/grinberg_blog/lib/python3.6/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/m0nte-cr1st0/.virtualenvs/grinberg_blog/lib/python3.6/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/m0nte-cr1st0/.virtualenvs/grinberg_blog/lib/python3.6/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/m0nte-cr1st0/.virtualenvs/grinberg_blog/lib/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/m0nte-cr1st0/.virtualenvs/grinberg_blog/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/m0nte-cr1st0/flask_projects/grinberg_blog/app/main/routes.py", line 214, in export_posts
+    current_user.launch_task('export_posts', _('Exporting posts...'))
+  File "/home/m0nte-cr1st0/flask_projects/grinberg_blog/app/models.py", line 150, in launch_task
+    *args, **kwargs)
+  File "/home/m0nte-cr1st0/.virtualenvs/grinberg_blog/lib/python3.6/site-packages/rq/queue.py", line 336, in enqueue
+    at_front=at_front, meta=meta
+  File "/home/m0nte-cr1st0/.virtualenvs/grinberg_blog/lib/python3.6/site-packages/rq/queue.py", line 286, in enqueue_call
+    job = self.enqueue_job(job, at_front=at_front)
+  File "/home/m0nte-cr1st0/.virtualenvs/grinberg_blog/lib/python3.6/site-packages/rq/queue.py", line 362, in enqueue_job
+    pipe.execute()
+  File "/home/m0nte-cr1st0/.virtualenvs/grinberg_blog/lib/python3.6/site-packages/redis/client.py", line 3685, in execute
+    self.shard_hint)
+  File "/home/m0nte-cr1st0/.virtualenvs/grinberg_blog/lib/python3.6/site-packages/redis/connection.py", line 1071, in get_connection
+    connection.connect()
+  File "/home/m0nte-cr1st0/.virtualenvs/grinberg_blog/lib/python3.6/site-packages/redis/connection.py", line 543, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to None:6379. Connection refused.
